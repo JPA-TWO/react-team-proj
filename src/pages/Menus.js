@@ -8,7 +8,7 @@ function Menus() {
 
 	return (
 		<div>
-			<h1>도서 목록 {(isAuthorized) && <button> onClick={() => navigate(`/menu/list`)}도서 추가</button>}</h1>
+			<h1>도서 목록 {(isAuthorized) && <button onClick={() => navigate(`/menu/list`)}>도서 추가</button>}</h1>
 			<MenuList />
 		</div>
 	);
