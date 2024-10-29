@@ -10,8 +10,8 @@ function Menus() {
 			<h1>
 				도서 목록
 				{isAuthorized && (
-					<button>
-						onClick={() => navigate(`/menu/regist`)}도서 추가
+					<button onClick={() => navigate(`/menu/regist`)}>
+						도서 추가
 					</button>
 				)}
 				<button onClick={() => navigate(`/menu/search`)}>
