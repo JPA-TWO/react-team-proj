@@ -1,5 +1,5 @@
 import { request } from './Api';
-import { getMenulist, registBook } from '../modules/MenuModule';
+import { getMenulist, getBook, registBook } from '../modules/MenuModule';
 
 export function callGetMenuListAPI() {
 	return async (dispatch, getState) => {
@@ -8,6 +8,19 @@ export function callGetMenuListAPI() {
 
 		dispatch(getMenulist(result));
 	};
+}
+
+export function callGetBookAPI(id) {
+
+	console.log('getBook api calls...');
+
+	return async (dispatch, getState) => {
+
+		const result = await request('GET', `/menu/${id}`);
+		console.log('getBook result : ', result);
+
+		dispatch(getBook(result));
+	}
 }
 
 export function callRegistBookAPI(book) {
