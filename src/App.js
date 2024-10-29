@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Main from "./pages/Main";
 import Menus from "./pages/Menus";
-import MenuDetail from "./pages/MenuDetail";
+import BookDetail from "./pages/MenuDetail";
 import MenuRegist from "./pages/MenuRegist";
 import MenuModify from "./pages/MenuModify";
 import BookSearch from "./pages/BookSearch";
@@ -28,7 +28,7 @@ function App() {
 					<Route index element={<Main />} />
 					<Route path='menu'>
 						<Route index element={<Menus />} />
-						<Route path=':id' element={<MenuDetail />} />
+						<Route path=':id' element={<BookDetail />} />
 						<Route path='regist' element={<MenuRegist />} />
 						<Route path='modify'>
 							<Route path=':id' element={<MenuModify />} />
