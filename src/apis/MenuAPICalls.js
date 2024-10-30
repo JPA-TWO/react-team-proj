@@ -1,5 +1,5 @@
 import { request } from './Api';
-import { getMenulist, getBook, registBook } from '../modules/MenuModule';
+import { getMenulist, getBook, registBook, deleteBook } from '../modules/MenuModule';
 
 export function callGetMenuListAPI() {
 	return async (dispatch, getState) => {
@@ -32,4 +32,17 @@ export function callRegistBookAPI(book) {
 
 		dispatch(registBook(result));
 	};
+}
+
+export function callDeleteBookAPI(id) {
+
+	console.log('deleteBook api calls...');
+
+	return async (dispatch, getState) => {
+
+		const result = await request('DELETE', `/menu/${id}`);
+		console.log('deleteBook result : ', result);
+
+		dispatch(deleteBook(result));
+	}
 }

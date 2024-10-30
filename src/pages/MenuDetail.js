@@ -2,7 +2,7 @@ import Book from '../components/items/Menu';
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// import { callDeleteMenuAPI } from '../apis/MenuAPICalls';
+import { callDeleteBookAPI } from '../apis/MenuAPICalls';
 
 function BookDetail() {
 
@@ -14,7 +14,7 @@ function BookDetail() {
     const result = useSelector(state => state.menuReducer);
 
     // const updateHandler = () => navigate(`/menu/modify/${id}`);
-    // const deleteHandler = () => dispatch(callDeleteMenuAPI(id));
+    const deleteHandler = () => dispatch(callDeleteBookAPI(id));
     
 
     useEffect(
@@ -34,7 +34,7 @@ function BookDetail() {
                 {isAuthorized && (
                     <>
                         {/* <button onClick={updateHandler}>도서 수정</button> */}
-                        {/* <button onClick={deleteHandler}>도서 삭제</button> */}
+                        <button onClick={deleteHandler}>도서 삭제</button>
                     </>
                 )}
             </h1>
